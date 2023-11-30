@@ -13,10 +13,10 @@ git status
 查看文件夹下那些文件是在被跟踪的(主要是代码文件需要被跟踪)，被跟踪标绿的文件才会被提交
 
 ```
-git add <filename/dir/.>
+git add <filename/dir/./-u>
 ```
 
-指定哪些文件需要被跟踪，指定单个文件、文件夹或者点表示当前目录下全部文件都可以
+指定哪些文件需要被跟踪，指定单个文件、文件夹或者点表示当前目录下全部文件都可以,-u是更新上次指定的所有文件
 
 ```
 git commit
@@ -50,8 +50,6 @@ git push -u <origin> master
 
 推送到github的master分支，-u是指定默认的远端分支，下次再推送就不用再指定origin和master了
 
-
-
 <mark>关于GitHub默认main分支的问题</mark>
 
 ##### 1.把github的main分支合并到本地(推荐，可以顺便把GitHub的readme顺便保存到本地)
@@ -77,5 +75,3 @@ git merge <origin/main>
 合并到本地的main分支中，此时可以正常push到github的main
 
 ##### 2.push以后在github设置中把master设置为主分支，删除main分支(必须先去除默认分支标记)
-
-
