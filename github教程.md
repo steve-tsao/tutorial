@@ -39,15 +39,43 @@ git log
 ## 远程
 
 ```
-git remote add origin <ssh/https>
+git remote add <origin> <ssh/https>
 ```
 
 让git关联远程仓库，在github新建仓库，复制仓库的ssh或者https连接(国内的https连接貌似不好使，ssh配置百度吧)
 
 ```
-git push -u origin master
+git push -u <origin> master
 ```
 
 推送到github的master分支，-u是指定默认的远端分支，下次再推送就不用再指定origin和master了
+
+
+
+<mark>关于GitHub默认main分支的问题</mark>
+
+##### 1.把github的main分支合并到本地(推荐，可以顺便把GitHub的readme顺便保存到本地)
+
+```
+git branch -m master main
+```
+
+把本地的master分支重命名为main，命名一直才能推送到github的main分支
+
+```
+git fetch <origin>
+```
+
+把远程仓库的内容fetch到本地，远程的内容比本地多也也无法推送
+
+(关于fetch和pull的区别，fetch把远程内容拿到本地而不对本地仓库造成影响，pull会拉取远程仓库并把本地仓库覆盖掉)
+
+```
+git merge <origin/main>
+```
+
+合并到本地的main分支中，此时可以正常push到github的main
+
+##### 2.push以后在github设置中把master设置为主分支，删除main分支(必须先去除默认分支标记)
 
 
